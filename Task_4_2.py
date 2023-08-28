@@ -13,5 +13,13 @@
 # Input1: 11, 92, 1, 42, 15, 12, 11, 81
 # Output1: Макс. кол-во ягод 184, собрано для куста 1
 from random import randint
-first_set = set(randint(1, 50) for i in range(int(input('Введите кол-во кустов: '))))
+first_set = list(randint(1, 50) for i in range(int(input('Введите кол-во кустов: '))))
 print(first_set)
+a = int(input('Введите номер  куста: '))
+if a == 1:
+    rez = first_set[0] + first_set[1] + first_set[-1]
+elif a == len(first_set):
+    rez = first_set[-2] + first_set[-1] + first_set[0]
+else:
+    rez = first_set[a-1] + first_set[a-2] + first_set[a]
+print(f"Макс. кол-во ягод {rez}, собрано для куста {a}")
