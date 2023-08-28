@@ -13,9 +13,9 @@
 # Output: Повторяющихся чисел нет
 from random import randint
 first_set = set(randint(1, 100) for i in range(int(input('Введите кол-во элементов первого набора чисел: '))))
-print(first_set)
+print(*first_set)
 second_set = set(randint(1, 100) for i in range(int(input('Введите кол-во элементов второго набора чисел: '))))
-print(second_set)
+print(*second_set)
 rez_set = sorted(first_set.intersection(second_set))
 if len(rez_set) == 0:
     print("Повторяющихся чисел нет")
